@@ -1,4 +1,4 @@
-package entitiy;
+package staticmethods;
 
 public class User {
 

@@ -1,5 +1,11 @@
-import entitiy.User;
-import validation.UserValidator;
+import defaultmethods.PayPalPayment;
+import defaultmethods.PaymentProcessor;
+import defaultmethods.CreditCard;
+import defaultmethods.UPIPayment;
+import functionalinterfaces.FunctionalInterfaceExamples;
+import methodreference.MethodReferenceExamples;
+import staticmethods.User;
+import staticmethods.UserValidator;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +21,35 @@ public class Main {
         } else {
             System.out.println("Invalid email format.");
         }
-    }
 
 
+        PaymentProcessor payment = new CreditCard();
+        payment.processPayment(150.0);
+
+
+        PaymentProcessor upiPayment = new UPIPayment();
+        upiPayment.processPayment(100.0);
+
+        PaymentProcessor paypalPayment = new PayPalPayment();
+        paypalPayment.processPayment(200.0);
+
+
+        MethodReferenceExamples examples = new MethodReferenceExamples();
+
+        examples.staticReference();
+        examples.instanceReference();
+        examples.arbitraryObjectReference();
+        examples.constructorReference();
+
+
+        FunctionalInterfaceExamples example = new FunctionalInterfaceExamples();
+        example.runAllExamples();
     }
+}
+
+
+
+
+
+
+

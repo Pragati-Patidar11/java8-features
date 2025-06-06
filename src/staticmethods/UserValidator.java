@@ -1,6 +1,4 @@
-package validation;
-
-import entitiy.User;
+package staticmethods;
 
 import java.util.Set;
 import java.util.regex.Pattern;
